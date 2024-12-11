@@ -1,0 +1,144 @@
+/* 기본 스타일 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#main {
+    display: flex;
+}
+/* 사이드바 */
+.sidebar {
+    width: 250px;
+    background-color: #34495e;
+    color: white;
+    padding: 20px 0;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #1abc9c;
+}
+
+
+header {
+    width: 100%;
+    height: 15vh;    
+    background-color: #34495e;
+    font-weight: bold;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* 메인 콘텐츠 */
+
+
+/* 이미지 섹션 스타일 */
+.banner {
+    display: flex;
+    flex-direction: column; /* 여러 줄로 배치 허용 */
+    justify-content: center; /* 가운데 정렬 */
+    gap: 20px; /* 이미지 사이 간격 */
+    padding: 20px;
+    background-color: white; /* 배경색 */
+    overflow-x: auto;
+}
+
+.banner-image {
+    width: 100%;
+    max-width: 1000px; /* 고정된 너비 */
+    aspect-ratio: 16/9; /* 고정된 비율 (16:9) */
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+}
+
+.banner-image img {
+    width: 100%; /* 이미지 너비 채우기 */
+    height: 100%; /* 이미지 비율 유지 */
+    object-fit: cover;
+    display: block;
+    z-index: 0;
+}
+
+/* 오버레이 효과 */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 검은 반투명 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* 기본적으로 보이지 않음 */
+    transition: opacity 0.3s ease; /* 부드러운 전환 효과 */
+    z-index: 1;
+}
+
+/* 마우스 올릴 때 오버레이 표시 */
+.banner-image:hover .overlay {
+    opacity: 1;
+}
+
+/* 오버레이 텍스트 스타일 */
+.overlay-text {
+    color: white;
+    font-size: 24px;
+    text-decoration: none; /* 링크 밑줄 제거 */
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.3s ease; /* 텍스트 움직임 효과 */
+}
+
+/* 마우스 올릴 때 텍스트 강조 */
+.banner-image:hover .overlay-text {
+    transform: scale(1.1); /* 텍스트 확대 */
+}
+
+footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #f5f5f5;
+}
+
+.content-section {
+    display: none; /* 기본적으로 모든 섹션 숨기기 */
+}
+
+.content-section.active {
+    display: block; /* 활성화된 섹션만 보이기 */
+}
+
+.sidebar nav ul li a.active-link {
+    background-color: #1abc9c; /* 활성화된 링크의 배경색 */
+    font-weight: bold; /* 활성화된 링크 강조 */
+}
+
+.main-content{
+    margin-left: 20px;
+}
